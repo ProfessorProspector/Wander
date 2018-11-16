@@ -1,0 +1,6 @@
+{
+  "parent": "block/leaves",
+  "textures": {
+    "all": "wander:block/orange_autumnal_leaves"
+  }
+}

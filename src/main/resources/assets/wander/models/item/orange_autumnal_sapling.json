@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "wander:block/orange_autumnal_sapling"
+  }
+}

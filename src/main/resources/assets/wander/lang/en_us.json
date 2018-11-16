@@ -1,0 +1,15 @@
+{
+  "biome.wander.autumnal_woods": "Autumnal Woods",
+  "biome.wander.woodlands": "Woodlands",
+  "biome.wander.mini_jungle": "Mini Jungle",
+  "biome.wander.meadow": "Meadow",
+
+  "block.wander.red_autumnal_leaves": "Red Autumnal Leaves",
+  "block.wander.brown_autumnal_leaves": "Brown Autumnal Leaves",
+  "block.wander.orange_autumnal_leaves": "Orange Autumnal Leaves",
+  "block.wander.yellow_autumnal_leaves": "Yellow Autumnal Leaves",
+  "block.wander.red_autumnal_sapling": "Red Autumnal Sapling",
+  "block.wander.brown_autumnal_sapling": "Brown Autumnal Sapling",
+  "block.wander.orange_autumnal_sapling": "Orange Autumnal Sapling",
+  "block.wander.yellow_autumnal_sapling": "Yellow Autumnal Sapling"
+}

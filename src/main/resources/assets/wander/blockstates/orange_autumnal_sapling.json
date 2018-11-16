@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "stage=0": {
+      "model": "wander:block/orange_autumnal_sapling"
+    },
+    "stage=1": {
+      "model": "wander:block/orange_autumnal_sapling"
+    }
+  }
+}

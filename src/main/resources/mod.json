@@ -1,0 +1,12 @@
+{
+  "id": "wander",
+  "name": "Wander",
+  "version": "0.1.0",
+  "side": "universal",
+  "initializer": "prospector.wander.Wander",
+  "description": "Some like to *traverse* landscapes but others prefer to simply wander.",
+  "mixins": {
+    "client": "wander.client.json",
+    "common": "wander.common.json"
+  }
+}
