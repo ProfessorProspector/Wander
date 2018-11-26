@@ -18,7 +18,7 @@ import net.minecraft.world.gen.feature.JungleGroundBushFeature;
 public class BiomeWoodlands extends TraverseBiome {
 
 	public static final BlockState OAK_LOG = Blocks.OAK_LOG.getDefaultState();
-	public static final BlockState OAK_LEAVES = Blocks.OAK_LEAVES.getDefaultState().set(Properties.PERSISTENT, false);
+	public static final BlockState OAK_LEAVES = Blocks.OAK_LEAVES.getDefaultState().with(Properties.PERSISTENT, false);
 
 	public static final Biome.Category CATEGORY = Biome.Category.FOREST;
 	public static final float DEPTH = 0.15F;
@@ -37,7 +37,7 @@ public class BiomeWoodlands extends TraverseBiome {
 
 	@Override
 	protected void overrideOptions() {
-		tallgrassFrequency = 16;
+		grassFrequency = 16;
 		flowerFrequency = 6;
 		hasDoubleFlowers = false;
 	}

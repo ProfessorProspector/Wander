@@ -2,10 +2,9 @@ package prospector.wander;
 
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.block.Block;
-import net.minecraft.gui.CreativeTab;
+import net.minecraft.gui.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.item.block.ItemBlock;
-import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
 import prospector.wander.biome.BiomeAutumnalWoods;
@@ -15,15 +14,18 @@ import prospector.wander.biome.BiomeWoodlands;
 import prospector.wander.block.AutumnalLSCompound;
 
 public class Wander implements ModInitializer {
+	public static final String MOD_ID = "wander";
+
 	public static int currentId = 180;
-	public static final Block redAutumnalLeaves;
-	public static final Block redAutumnalSapling;
-	public static final Block brownAutumnalLeaves;
-	public static final Block brownAutumnalSapling;
-	public static final Block orangeAutumnalLeaves;
-	public static final Block orangeAutumnalSapling;
-	public static final Block yellowAutumnalLeaves;
-	public static final Block yellowAutumnalSapling;
+
+	public static final Block RED_AUTUMNAL_LEAVES;
+	public static final Block RED_AUTUMNAL_SAPLING;
+	public static final Block BROWN_AUTUMNAL_LEAVES;
+	public static final Block BROWN_AUTUMNAL_SAPLING;
+	public static final Block ORANGE_AUTUMNAL_LEAVES;
+	public static final Block ORANGE_AUTUMNAL_SAPLING;
+	public static final Block YELLOW_AUTUMNAL_LEAVES;
+	public static final Block YELLOW_AUTUMNAL_SAPLING;
 
 	public static final Biome AUTUMNAL_WOODS;
 	public static final Biome MEADOW;
@@ -32,20 +34,20 @@ public class Wander implements ModInitializer {
 
 	static {
 		AutumnalLSCompound redAutumnalLS = new AutumnalLSCompound();
-		register("red_autumnal_leaves", redAutumnalLeaves = redAutumnalLS.lsLeaves, CreativeTab.DECORATIONS);
-		register("red_autumnal_sapling", redAutumnalSapling = redAutumnalLS.lsSapling, CreativeTab.DECORATIONS);
+		register("red_autumnal_leaves", RED_AUTUMNAL_LEAVES = redAutumnalLS.lsLeaves, ItemGroup.DECORATIONS);
+		register("red_autumnal_sapling", RED_AUTUMNAL_SAPLING = redAutumnalLS.lsSapling, ItemGroup.DECORATIONS);
 
 		AutumnalLSCompound brownAutumnalLS = new AutumnalLSCompound();
-		register("brown_autumnal_leaves", brownAutumnalLeaves = brownAutumnalLS.lsLeaves, CreativeTab.DECORATIONS);
-		register("brown_autumnal_sapling", brownAutumnalSapling = brownAutumnalLS.lsSapling, CreativeTab.DECORATIONS);
+		register("brown_autumnal_leaves", BROWN_AUTUMNAL_LEAVES = brownAutumnalLS.lsLeaves, ItemGroup.DECORATIONS);
+		register("brown_autumnal_sapling", BROWN_AUTUMNAL_SAPLING = brownAutumnalLS.lsSapling, ItemGroup.DECORATIONS);
 
 		AutumnalLSCompound orangeAutumnalLS = new AutumnalLSCompound();
-		register("orange_autumnal_leaves", orangeAutumnalLeaves = orangeAutumnalLS.lsLeaves, CreativeTab.DECORATIONS);
-		register("orange_autumnal_sapling", orangeAutumnalSapling = orangeAutumnalLS.lsSapling, CreativeTab.DECORATIONS);
+		register("orange_autumnal_leaves", ORANGE_AUTUMNAL_LEAVES = orangeAutumnalLS.lsLeaves, ItemGroup.DECORATIONS);
+		register("orange_autumnal_sapling", ORANGE_AUTUMNAL_SAPLING = orangeAutumnalLS.lsSapling, ItemGroup.DECORATIONS);
 
 		AutumnalLSCompound yellowAutumnalLS = new AutumnalLSCompound();
-		register("yellow_autumnal_leaves", yellowAutumnalLeaves = yellowAutumnalLS.lsLeaves, CreativeTab.DECORATIONS);
-		register("yellow_autumnal_sapling", yellowAutumnalSapling = yellowAutumnalLS.lsSapling, CreativeTab.DECORATIONS);
+		register("yellow_autumnal_leaves", YELLOW_AUTUMNAL_LEAVES = yellowAutumnalLS.lsLeaves, ItemGroup.DECORATIONS);
+		register("yellow_autumnal_sapling", YELLOW_AUTUMNAL_SAPLING = yellowAutumnalLS.lsSapling, ItemGroup.DECORATIONS);
 
 		AUTUMNAL_WOODS = register(nextId(), "autumnal_woods", new BiomeAutumnalWoods());
 		MEADOW = register(nextId(), "meadow", new BiomeMeadow());
@@ -54,18 +56,18 @@ public class Wander implements ModInitializer {
 	}
 
 	private static Biome register(int rawId, String name, Biome biome) {
-		Registry.register(Registry.BIOMES, "wander:" + name, biome);
+		Registry.register(Registry.BIOMES, MOD_ID + "" + name, biome);
 		if (biome.hasParent()) {
-			Biome.PARENT_BIOME_ID_MAP.add(biome, Registry.BIOMES.getRawId(Registry.BIOMES.get(new Identifier(biome.getParent()))));
+			Biome.PARENT_BIOME_ID_MAP.add(biome);
 		}
 
 		return biome;
 	}
 
-	private static Block register(String name, Block block, CreativeTab tab) {
-		Registry.register(Registry.BLOCKS, "wander:" + name, block);
+	private static Block register(String name, Block block, ItemGroup tab) {
+		Registry.register(Registry.BLOCKS, MOD_ID + ":" + name, block);
 		ItemBlock item = new ItemBlock(block, new Item.Builder().creativeTab(tab));
-		item.method_7713(Item.BLOCK_ITEM_MAP, item);
+		item.registerBlockItemMap(Item.BLOCK_ITEM_MAP, item);
 		register(name, item);
 		return block;
 	}
@@ -81,6 +83,6 @@ public class Wander implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		Registry.BLOCKS.stream().forEach(block -> block.getStateFactory().getStates().stream().filter(state -> Block.BLOCKSTATE_ID_LIST.getId(state) == -1).forEach(Block.BLOCKSTATE_ID_LIST::method_10205));
+
 	}
 }

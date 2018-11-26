@@ -16,8 +16,8 @@ import net.minecraft.world.gen.feature.OakTreeFeature;
 
 public class BiomeMiniJungle extends TraverseBiome {
 
-	public static final BlockState JUNGLE_LOG = Blocks.field_10306.getDefaultState();//jungle log
-	public static final BlockState JUNGLE_LEAVES = Blocks.field_10335.getDefaultState().set(Properties.PERSISTENT, false); //jungle leaves
+	public static final BlockState JUNGLE_LOG = Blocks.JUNGLE_LOG.getDefaultState();
+	public static final BlockState JUNGLE_LEAVES = Blocks.JUNGLE_LEAVES.getDefaultState().with(Properties.PERSISTENT, false);
 
 	public static final Biome.Category CATEGORY = Biome.Category.JUNGLE;
 	public static final float DEPTH = -0.1F;
@@ -33,13 +33,13 @@ public class BiomeMiniJungle extends TraverseBiome {
 
 	@Override
 	protected void overrideOptions() {
-		tallgrassFrequency = 16;
+		grassFrequency = 16;
 		flowerFrequency = 6;
 		hasDoubleFlowers = false;
 		vineFrequency = 50;
 		melonFrequency = 1;
-		tallgrassFeature = Feature.JUNGLE_GRASS;
-		tallgrassFeatureConfig = FeatureConfig.DEFAULT;
+		grassFeature = Feature.JUNGLE_GRASS;
+		grassFeatureConfig = FeatureConfig.DEFAULT;
 	}
 
 	@Override

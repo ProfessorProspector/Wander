@@ -55,9 +55,9 @@ public abstract class TraverseBiome extends Biome {
 	public int doubleFlowerFrequency = 5;
 	public FlowerFeature flowerFeature = Feature.DEFAULT_FLOWER;
 	public int flowerFrequency = 2;
-	public Feature tallgrassFeature = Feature.GRASS;
-	public FeatureConfig tallgrassFeatureConfig = new GrassFeatureConfig(Blocks.field_10214.getDefaultState()); //tallgrass
-	public int tallgrassFrequency = 2;
+	public Feature grassFeature = Feature.GRASS;
+	public FeatureConfig grassFeatureConfig = new GrassFeatureConfig(Blocks.GRASS.getDefaultState());
+	public int grassFrequency = 2;
 	public int brownMushroomChance = 4;
 	public int redMushroomChance = 8;
 	public int sugarCaneFrequency = 10;
@@ -204,7 +204,7 @@ public abstract class TraverseBiome extends Biome {
 		}
 		if (hasSphereReplaces) {
 			this.addFeature(GenerationSteps.FeatureStep.UNDERGROUND_ORES, configureFeature(Feature.DISK, new BlockClusterFeatureConfig(Blocks.SAND.getDefaultState(), 7, 2, Lists.newArrayList(Blocks.DIRT.getDefaultState(), Blocks.GRASS_BLOCK.getDefaultState())), Decorator.COUNT_TOP_SOLID, new CountDecoratorConfig(3)));
-			this.addFeature(GenerationSteps.FeatureStep.UNDERGROUND_ORES, configureFeature(Feature.DISK, new BlockClusterFeatureConfig(Blocks.field_10460.getDefaultState(), 4, 1, Lists.newArrayList(Blocks.DIRT.getDefaultState(), Blocks.field_10460.getDefaultState())), Decorator.COUNT_TOP_SOLID, new CountDecoratorConfig(1)));//clay
+			this.addFeature(GenerationSteps.FeatureStep.UNDERGROUND_ORES, configureFeature(Feature.DISK, new BlockClusterFeatureConfig(Blocks.CLAY.getDefaultState(), 4, 1, Lists.newArrayList(Blocks.DIRT.getDefaultState(), Blocks.CLAY.getDefaultState())), Decorator.COUNT_TOP_SOLID, new CountDecoratorConfig(1)));
 			this.addFeature(GenerationSteps.FeatureStep.UNDERGROUND_ORES, configureFeature(Feature.DISK, new BlockClusterFeatureConfig(Blocks.GRAVEL.getDefaultState(), 6, 2, Lists.newArrayList(Blocks.DIRT.getDefaultState(), Blocks.GRASS_BLOCK.getDefaultState())), Decorator.COUNT_TOP_SOLID, new CountDecoratorConfig(1)));
 		}
 		if (hasIceAndSnowFeature) {
@@ -220,15 +220,15 @@ public abstract class TraverseBiome extends Biome {
 		if (hadDefaultMinables) {
 			addMinable(Blocks.DIRT, dirtSize, Decorator.COUNT_RANGE, new RangeDecoratorConfig(10, 0, 0, 256));
 			addMinable(Blocks.GRAVEL, gravelSize, Decorator.COUNT_RANGE, new RangeDecoratorConfig(8, 0, 0, 256));
-			addMinable(Blocks.field_10474, graniteSize, Decorator.COUNT_RANGE, new RangeDecoratorConfig(10, 0, 0, 80));//granite
-			addMinable(Blocks.field_10508, dioriteSize, Decorator.COUNT_RANGE, new RangeDecoratorConfig(10, 0, 0, 80));//diorite
-			addMinable(Blocks.field_10115, andesiteSize, Decorator.COUNT_RANGE, new RangeDecoratorConfig(10, 0, 0, 80));//andesite
-			addMinable(Blocks.field_10418, coalSize, Decorator.COUNT_RANGE, new RangeDecoratorConfig(20, 0, 0, 128));//coal ore
-			addMinable(Blocks.field_10212, ironSize, Decorator.COUNT_RANGE, new RangeDecoratorConfig(20, 0, 0, 64));//iron
-			addMinable(Blocks.field_10571, goldSize, Decorator.COUNT_RANGE, new RangeDecoratorConfig(2, 0, 0, 32));//gold
-			addMinable(Blocks.field_10080, redstoneSize, Decorator.COUNT_RANGE, new RangeDecoratorConfig(8, 0, 0, 16));//redstone
-			addMinable(Blocks.field_10442, diamondSize, Decorator.COUNT_RANGE, new RangeDecoratorConfig(1, 0, 0, 16));//diamond
-			addMinable(Blocks.field_10090, lapisSize, Decorator.COUNT_DEPTH_AVERAGE, new CountDepthDecoratorConfig(1, 16, 16));//lapis
+			addMinable(Blocks.GRANITE, graniteSize, Decorator.COUNT_RANGE, new RangeDecoratorConfig(10, 0, 0, 80));
+			addMinable(Blocks.DIORITE, dioriteSize, Decorator.COUNT_RANGE, new RangeDecoratorConfig(10, 0, 0, 80));
+			addMinable(Blocks.ANDESITE, andesiteSize, Decorator.COUNT_RANGE, new RangeDecoratorConfig(10, 0, 0, 80));
+			addMinable(Blocks.COAL_ORE, coalSize, Decorator.COUNT_RANGE, new RangeDecoratorConfig(20, 0, 0, 128));
+			addMinable(Blocks.IRON_ORE, ironSize, Decorator.COUNT_RANGE, new RangeDecoratorConfig(20, 0, 0, 64));
+			addMinable(Blocks.GOLD_ORE, goldSize, Decorator.COUNT_RANGE, new RangeDecoratorConfig(2, 0, 0, 32));
+			addMinable(Blocks.REDSTONE_ORE, redstoneSize, Decorator.COUNT_RANGE, new RangeDecoratorConfig(8, 0, 0, 16));
+			addMinable(Blocks.DIAMOND_ORE, diamondSize, Decorator.COUNT_RANGE, new RangeDecoratorConfig(1, 0, 0, 16));
+			addMinable(Blocks.LAPIS_ORE, lapisSize, Decorator.COUNT_DEPTH_AVERAGE, new CountDepthDecoratorConfig(1, 16, 16));
 		}
 	}
 
@@ -275,20 +275,20 @@ public abstract class TraverseBiome extends Biome {
 				addVegetation(Feature.RANDOM_RANDOM_SELECTOR, new RandomRandomFeatureConfig(
 						new Feature[] { Feature.DOUBLE_PLANT, Feature.DOUBLE_PLANT, Feature.DOUBLE_PLANT },
 						new FeatureConfig[] {
-							new DoublePlantFeatureConfig(Blocks.field_10378.getDefaultState()), //lilac
-							new DoublePlantFeatureConfig(Blocks.field_10430.getDefaultState()), //rose bush
-							new DoublePlantFeatureConfig(Blocks.field_10003.getDefaultState()) //peony
+							new DoublePlantFeatureConfig(Blocks.LILAC.getDefaultState()),
+							new DoublePlantFeatureConfig(Blocks.ROSE_BUSH.getDefaultState()),
+							new DoublePlantFeatureConfig(Blocks.PEONY.getDefaultState())
 						}, 0),
 					Decorator.COUNT_HEIGHTMAP_32, new CountDecoratorConfig(doubleFlowerFrequency));
 			}
 			if (flowerFrequency > 0)
 				addFeature(GenerationSteps.FeatureStep.VEGETAL_DECORATION, configureFeature(flowerFeature, FeatureConfig.DEFAULT, Decorator.COUNT_HEIGHTMAP_32, new CountDecoratorConfig(flowerFrequency)));
-			if (tallgrassFrequency > 0)
-				addVegetation(tallgrassFeature, tallgrassFeatureConfig, Decorator.COUNT_HEIGHTMAP_DOUBLE, new CountDecoratorConfig(tallgrassFrequency));
+			if (grassFrequency > 0)
+				addVegetation(grassFeature, grassFeatureConfig, Decorator.COUNT_HEIGHTMAP_DOUBLE, new CountDecoratorConfig(grassFrequency));
 			if (brownMushroomChance > 0)
-				addVegetation(Feature.BUSH, new BushFeatureConfig(Blocks.field_10251.getDefaultState()), Decorator.CHANCE_HEIGHTMAP_DOUBLE, new ChanceDecoratorConfig(brownMushroomChance));//brownMushroom
+				addVegetation(Feature.BUSH, new BushFeatureConfig(Blocks.BROWN_MUSHROOM.getDefaultState()), Decorator.CHANCE_HEIGHTMAP_DOUBLE, new ChanceDecoratorConfig(brownMushroomChance));
 			if (redMushroomChance > 0)
-				addVegetation(Feature.BUSH, new BushFeatureConfig(Blocks.field_10559.getDefaultState()), Decorator.CHANCE_HEIGHTMAP_DOUBLE, new ChanceDecoratorConfig(redMushroomChance));//red mushroom
+				addVegetation(Feature.BUSH, new BushFeatureConfig(Blocks.RED_MUSHROOM.getDefaultState()), Decorator.CHANCE_HEIGHTMAP_DOUBLE, new ChanceDecoratorConfig(redMushroomChance));
 			if (sugarCaneFrequency > 0)
 				addVegetation(Feature.REED, FeatureConfig.DEFAULT, Decorator.COUNT_HEIGHTMAP_DOUBLE, new CountDecoratorConfig(sugarCaneFrequency));
 			if (pumpkinChance > 0)

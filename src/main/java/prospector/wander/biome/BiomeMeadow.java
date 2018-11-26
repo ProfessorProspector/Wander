@@ -30,7 +30,7 @@ public class BiomeMeadow extends TraverseBiome {
 
 	@Override
 	protected void overrideOptions() {
-		tallgrassFrequency = 15;
+		grassFrequency = 15;
 		flowerFrequency = 15;
 		sugarCaneFrequency = 2;
 		hasDoubleFlowers = false;

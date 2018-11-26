@@ -28,10 +28,10 @@ public class BiomeAutumnalWoods extends TraverseBiome {
 	public static final int FOLIAGE_COLOR = 0xFFD2D31F;
 
 	public static final BlockState OAK_LOG = Blocks.OAK_LOG.getDefaultState();
-	public static Feature redAutumnalTree = new TraverseTreeFeature(DefaultFeatureConfig::make, false, OAK_LOG, Wander.redAutumnalLeaves.getDefaultState().set(Properties.PERSISTENT, false));
-	public static Feature brownAutumnalTree = new TraverseTreeFeature(DefaultFeatureConfig::make, false, OAK_LOG, Wander.brownAutumnalLeaves.getDefaultState().set(Properties.PERSISTENT, false));
-	public static Feature orangeAutumnalTree = new TraverseTreeFeature(DefaultFeatureConfig::make, true, OAK_LOG, Wander.orangeAutumnalLeaves.getDefaultState().set(Properties.PERSISTENT, false));
-	public static Feature yellowAutumnalTree = new TraverseTreeFeature(DefaultFeatureConfig::make, true, OAK_LOG, Wander.yellowAutumnalLeaves.getDefaultState().set(Properties.PERSISTENT, false));
+	public static Feature redAutumnalTree = new TraverseTreeFeature(DefaultFeatureConfig::make, false, OAK_LOG, Wander.RED_AUTUMNAL_LEAVES.getDefaultState().with(Properties.PERSISTENT, false));
+	public static Feature brownAutumnalTree = new TraverseTreeFeature(DefaultFeatureConfig::make, false, OAK_LOG, Wander.BROWN_AUTUMNAL_LEAVES.getDefaultState().with(Properties.PERSISTENT, false));
+	public static Feature orangeAutumnalTree = new TraverseTreeFeature(DefaultFeatureConfig::make, true, OAK_LOG, Wander.ORANGE_AUTUMNAL_LEAVES.getDefaultState().with(Properties.PERSISTENT, false));
+	public static Feature yellowAutumnalTree = new TraverseTreeFeature(DefaultFeatureConfig::make, true, OAK_LOG, Wander.YELLOW_AUTUMNAL_LEAVES.getDefaultState().with(Properties.PERSISTENT, false));
 
 	public BiomeAutumnalWoods() {
 		super(Biome.Category.FOREST, DEPTH, SCALE, TEMPERATURE, DOWNFALL);

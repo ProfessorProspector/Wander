@@ -2,9 +2,10 @@ package prospector.wander.block;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.util.LazySingleton;
 import net.minecraft.world.gen.config.feature.DefaultFeatureConfig;
-import prospector.wander.TreeGenerator;
+import prospector.silk.block.SilkBlockLeaves;
+import prospector.silk.block.SilkBlockSapling;
+import prospector.silk.util.SilkSaplingGenerator;
 import prospector.wander.feature.TraverseTreeFeature;
 
 public class AutumnalLSCompound {
@@ -18,16 +19,16 @@ public class AutumnalLSCompound {
 		lsSapling = new LSSapling();
 	}
 
-	public class LSLeaves extends BlockTraverseLeaves {
+	public class LSLeaves extends SilkBlockLeaves {
 
 		public LSLeaves() {
 			super(null);
 		}
 	}
 
-	public class LSSapling extends BlockTraverseSapling {
+	public class LSSapling extends SilkBlockSapling {
 		public LSSapling() {
-			super(new TreeGenerator(new TraverseTreeFeature(DefaultFeatureConfig::make, false, OAK_LOG, lsLeaves.getDefaultState())));
+			super(new SilkSaplingGenerator(new TraverseTreeFeature(DefaultFeatureConfig::make, false, OAK_LOG, lsLeaves.getDefaultState())));
 		}
 	}
 

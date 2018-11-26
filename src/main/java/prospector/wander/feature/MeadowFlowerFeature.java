@@ -19,26 +19,27 @@ public class MeadowFlowerFeature extends FlowerFeature {
 		super(function);
 	}
 
-	public BlockState method_13175(Random random, BlockPos pos) {
-		int r = random.nextInt(12);
+	@Override
+	public BlockState method_13175(Random rand, BlockPos pos) {
+		int r = rand.nextInt(12);
 		if (r == 0 || r == 1 || r == 2) {
-			return Blocks.field_10449.getDefaultState();
+			return Blocks.POPPY.getDefaultState();
 		} else if (r == 3 || r == 4 || r == 5) {
-			return Blocks.field_10573.getDefaultState();
+			return Blocks.AZURE_BLUET.getDefaultState();
 		} else if (r == 6 || r == 7 || r == 8) {
-			return Blocks.field_10554.getDefaultState();
+			return Blocks.OXEYE_DAISY.getDefaultState();
 		} else if (r == 9 || r == 10) {
-			return Blocks.field_10182.getDefaultState();
+			return Blocks.DANDELION.getDefaultState();
 		} else {
-			int t = random.nextInt(5);
+			int t = rand.nextInt(5);
 			if (t == 0) {
-				return Blocks.field_10048.getDefaultState();
+				return Blocks.ORANGE_TULIP.getDefaultState();
 			} else if (t == 1) {
-				return Blocks.field_10315.getDefaultState();
+				return Blocks.PINK_TULIP.getDefaultState();
 			} else if (t == 2) {
-				return Blocks.field_10270.getDefaultState();
+				return Blocks.RED_TULIP.getDefaultState();
 			} else {
-				return Blocks.field_10156.getDefaultState();
+				return Blocks.WHITE_TULIP.getDefaultState();
 			}
 		}
 	}

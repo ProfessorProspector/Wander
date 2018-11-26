@@ -19,7 +19,7 @@ import java.util.function.Function;
 public class TraverseSwampTreeFeature extends TreeFeature<DefaultFeatureConfig> {
 
 	public static final BlockState OAK_LOG = Blocks.OAK_LOG.getDefaultState();
-	public static final BlockState OAK_LEAVES = Blocks.OAK_LEAVES.getDefaultState().set(Properties.PERSISTENT, false);
+	public static final BlockState OAK_LEAVES = Blocks.OAK_LEAVES.getDefaultState().with(Properties.PERSISTENT, false);
 	public final boolean isWorldGen;
 	private final int minTreeHeight;
 	private BlockState stateWood;
@@ -41,6 +41,7 @@ public class TraverseSwampTreeFeature extends TreeFeature<DefaultFeatureConfig> 
 		this.stateLeaves = stateLeaves;
 	}
 
+	@Override
 	public boolean method_12775(Set<BlockPos> var1, class_3747 var2, Random var3, BlockPos var4) {
 		int var5 = var3.nextInt(4) + minTreeHeight;
 		var4 = var2.getTopPosition(class_2902.Type.OCEAN_FLOOR, var4);
@@ -130,19 +131,19 @@ public class TraverseSwampTreeFeature extends TreeFeature<DefaultFeatureConfig> 
 								BlockPos var15 = var20.north();
 								BlockPos var16 = var20.south();
 								if (var3.nextInt(4) == 0 && method_16424(var2, var21)) {
-									this.method_14030(var2, var21, BlockVine.field_11702);
+									this.addVines(var2, var21, BlockVine.field_11702);
 								}
 
 								if (var3.nextInt(4) == 0 && method_16424(var2, var14)) {
-									this.method_14030(var2, var14, BlockVine.field_11696);
+									this.addVines(var2, var14, BlockVine.field_11696);
 								}
 
 								if (var3.nextInt(4) == 0 && method_16424(var2, var15)) {
-									this.method_14030(var2, var15, BlockVine.field_11699);
+									this.addVines(var2, var15, BlockVine.field_11699);
 								}
 
 								if (var3.nextInt(4) == 0 && method_16424(var2, var16)) {
-									this.method_14030(var2, var16, BlockVine.field_11706);
+									this.addVines(var2, var16, BlockVine.field_11706);
 								}
 							}
 						}
@@ -158,8 +159,8 @@ public class TraverseSwampTreeFeature extends TreeFeature<DefaultFeatureConfig> 
 		}
 	}
 
-	private void method_14030(class_3747 var1, BlockPos var2, PropertyBoolean var3) {
-		BlockState var4 = Blocks.field_10597.getDefaultState().set(var3, true);
+	private void addVines(class_3747 var1, BlockPos var2, PropertyBoolean var3) {
+		BlockState var4 = Blocks.VINE.getDefaultState().with(var3, true);
 		this.method_13153(var1, var2, var4);
 		int var5 = 4;
 

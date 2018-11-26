@@ -3,7 +3,8 @@
   "package": "prospector.wander.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "BiomesMixin"
+    "BiomesMixin",
+    "BiomesMixin2"
   ],
   "injectors": {
     "defaultRequire": 1
