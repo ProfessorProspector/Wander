@@ -1,4 +1,4 @@
-package prospector.wander.feature;//package traverseteam.oml.traverse.feature;
+package prospector.traverse.wander.feature;//package traverseteam.oml.traverse.feature;
 //
 //import net.minecraft.block.BlockLog;
 //import net.minecraft.block.Blocks;

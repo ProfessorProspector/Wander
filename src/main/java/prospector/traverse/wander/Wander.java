@@ -1,22 +1,21 @@
-package prospector.wander;
+package prospector.traverse.wander;
 
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.block.Block;
-import net.minecraft.gui.ItemGroup;
+import net.minecraft.block.Blocks;
 import net.minecraft.item.Item;
-import net.minecraft.item.block.ItemBlock;
+import net.minecraft.item.block.BlockItem;
+import net.minecraft.sortme.ItemGroup;
+import net.minecraft.state.property.Properties;
 import net.minecraft.util.registry.Registry;
-import net.minecraft.world.biome.Biome;
-import prospector.wander.biome.BiomeAutumnalWoods;
-import prospector.wander.biome.BiomeMeadow;
-import prospector.wander.biome.BiomeMiniJungle;
-import prospector.wander.biome.BiomeWoodlands;
-import prospector.wander.block.AutumnalLSCompound;
+import net.minecraft.world.gen.config.feature.DefaultFeatureConfig;
+import net.minecraft.world.gen.feature.Feature;
+import prospector.traverse.api.Traverse;
+import prospector.traverse.api.feature.TraverseTreeFeature;
+import prospector.traverse.wander.block.AutumnalLSCompound;
 
 public class Wander implements ModInitializer {
 	public static final String MOD_ID = "wander";
-
-	public static int currentId = 180;
 
 	public static final Block RED_AUTUMNAL_LEAVES;
 	public static final Block RED_AUTUMNAL_SAPLING;
@@ -27,10 +26,10 @@ public class Wander implements ModInitializer {
 	public static final Block YELLOW_AUTUMNAL_LEAVES;
 	public static final Block YELLOW_AUTUMNAL_SAPLING;
 
-	public static final Biome AUTUMNAL_WOODS;
-	public static final Biome MEADOW;
-	public static final Biome MINI_JUNGLE;
-	public static final Biome WOODLANDS;
+	public static final Feature<DefaultFeatureConfig> RED_AUTUMNAL_TREE;
+	public static final Feature<DefaultFeatureConfig> BROWN_AUTUMNAL_TREE;
+	public static final Feature<DefaultFeatureConfig> ORANGE_AUTUMNAL_TREE;
+	public static final Feature<DefaultFeatureConfig> YELLOW_AUTUMNAL_TREE;
 
 	static {
 		AutumnalLSCompound redAutumnalLS = new AutumnalLSCompound();
@@ -49,24 +48,15 @@ public class Wander implements ModInitializer {
 		register("yellow_autumnal_leaves", YELLOW_AUTUMNAL_LEAVES = yellowAutumnalLS.lsLeaves, ItemGroup.DECORATIONS);
 		register("yellow_autumnal_sapling", YELLOW_AUTUMNAL_SAPLING = yellowAutumnalLS.lsSapling, ItemGroup.DECORATIONS);
 
-		AUTUMNAL_WOODS = register(nextId(), "autumnal_woods", new BiomeAutumnalWoods());
-		MEADOW = register(nextId(), "meadow", new BiomeMeadow());
-		MINI_JUNGLE = register(nextId(), "mini_jungle", new BiomeMiniJungle());
-		WOODLANDS = register(nextId(), "woodlands", new BiomeWoodlands());
-	}
-
-	private static Biome register(int rawId, String name, Biome biome) {
-		Registry.register(Registry.BIOMES, MOD_ID + "" + name, biome);
-		if (biome.hasParent()) {
-			Biome.PARENT_BIOME_ID_MAP.add(biome);
-		}
-
-		return biome;
+		RED_AUTUMNAL_TREE = Traverse.registerFeature(MOD_ID, "red_autumnal_tree", new TraverseTreeFeature(DefaultFeatureConfig::deserialize, false, Blocks.OAK_LOG.getDefaultState(), Wander.RED_AUTUMNAL_LEAVES.getDefaultState().with(Properties.PERSISTENT, false)));
+		BROWN_AUTUMNAL_TREE = Traverse.registerFeature(MOD_ID, "brown_autumnal_tree", new TraverseTreeFeature(DefaultFeatureConfig::deserialize, false, Blocks.OAK_LOG.getDefaultState(), Wander.BROWN_AUTUMNAL_LEAVES.getDefaultState().with(Properties.PERSISTENT, false)));
+		ORANGE_AUTUMNAL_TREE = Traverse.registerFeature(MOD_ID, "orange_autumnal_tree", new TraverseTreeFeature(DefaultFeatureConfig::deserialize, false, Blocks.OAK_LOG.getDefaultState(), Wander.ORANGE_AUTUMNAL_LEAVES.getDefaultState().with(Properties.PERSISTENT, false)));
+		YELLOW_AUTUMNAL_TREE = Traverse.registerFeature(MOD_ID, "yellow_autumnal_tree", new TraverseTreeFeature(DefaultFeatureConfig::deserialize, false, Blocks.OAK_LOG.getDefaultState(), Wander.YELLOW_AUTUMNAL_LEAVES.getDefaultState().with(Properties.PERSISTENT, false)));
 	}
 
 	private static Block register(String name, Block block, ItemGroup tab) {
 		Registry.register(Registry.BLOCKS, MOD_ID + ":" + name, block);
-		ItemBlock item = new ItemBlock(block, new Item.Builder().creativeTab(tab));
+		BlockItem item = new BlockItem(block, new Item.Builder().creativeTab(tab));
 		item.registerBlockItemMap(Item.BLOCK_ITEM_MAP, item);
 		register(name, item);
 		return block;
@@ -77,12 +67,8 @@ public class Wander implements ModInitializer {
 		return item;
 	}
 
-	public static int nextId() {
-		return currentId += 1;
-	}
-
 	@Override
 	public void onInitialize() {
-
+		Traverse.registerBiomePack("wander");
 	}
 }

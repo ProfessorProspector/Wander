@@ -1,6 +1,6 @@
-package prospector.wander.biome;
+package prospector.traverse.wander.biome;
 
-import net.minecraft.entity.EntityFactory;
+import net.minecraft.entity.EntityCategory;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
@@ -10,9 +10,10 @@ import net.minecraft.world.gen.config.feature.FeatureConfig;
 import net.minecraft.world.gen.decorator.Decorator;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.FlowerFeature;
-import prospector.wander.feature.MeadowFlowerFeature;
+import prospector.traverse.api.biome.OLDTRAVERSEBIOME;
+import prospector.traverse.wander.feature.MeadowFlowerFeature;
 
-public class BiomeMeadow extends TraverseBiome {
+public class BiomeMeadow extends OLDTRAVERSEBIOME {
 
 	public static final Biome.Category CATEGORY = Biome.Category.FOREST;
 	public static final float DEPTH = 0.1F;
@@ -22,10 +23,10 @@ public class BiomeMeadow extends TraverseBiome {
 	public static final int GRASS_COLOR = 0xFF65CC53;
 	public static final int FOLIAGE_COLOR = 0xFF5DD64A;
 
-	public static final FlowerFeature MEADOW_FLOWERS = new MeadowFlowerFeature(DefaultFeatureConfig::make);
+	public static final FlowerFeature MEADOW_FLOWERS = new MeadowFlowerFeature(DefaultFeatureConfig::deserialize);
 
 	public BiomeMeadow() {
-		super(Biome.Category.FOREST, DEPTH, SCALE, TEMPERATURE, DOWNFALL);
+		super(Category.PLAINS, DEPTH, SCALE, TEMPERATURE, DOWNFALL);
 	}
 
 	@Override
@@ -46,8 +47,8 @@ public class BiomeMeadow extends TraverseBiome {
 	@Override
 	public void addEntitySpawns() {
 		super.addEntitySpawns();
-		addEntitySpawnEntry(EntityType.CREATURE, EntityFactory.HORSE, 5, 2, 4);
-		addEntitySpawnEntry(EntityType.CREATURE, EntityFactory.DONKEY, 1, 1, 2);
+		addEntitySpawnEntry(EntityCategory.CREATURE, EntityType.HORSE, 5, 2, 4);
+		addEntitySpawnEntry(EntityCategory.CREATURE, EntityType.DONKEY, 1, 1, 2);
 	}
 
 	@Override

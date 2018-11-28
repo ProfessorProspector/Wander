@@ -1,8 +1,8 @@
-package prospector.wander.biome;
+package prospector.traverse.wander.biome;
 
-import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.entity.EntityFactory;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.EntityCategory;
 import net.minecraft.entity.EntityType;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
@@ -14,8 +14,9 @@ import net.minecraft.world.gen.config.feature.RandomFeatureConfig;
 import net.minecraft.world.gen.decorator.Decorator;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.JungleGroundBushFeature;
+import prospector.traverse.api.biome.OLDTRAVERSEBIOME;
 
-public class BiomeWoodlands extends TraverseBiome {
+public class BiomeWoodlands extends OLDTRAVERSEBIOME {
 
 	public static final BlockState OAK_LOG = Blocks.OAK_LOG.getDefaultState();
 	public static final BlockState OAK_LEAVES = Blocks.OAK_LEAVES.getDefaultState().with(Properties.PERSISTENT, false);
@@ -29,7 +30,7 @@ public class BiomeWoodlands extends TraverseBiome {
 	public static final int FOLIAGE_COLOR = 0xFF849E4A;
 
 	//	protected static final FeatureFallenTree FALLEN_TREE_FEATURE = new FeatureFallenTree(true);
-	protected static final JungleGroundBushFeature OAK_SHRUB = new JungleGroundBushFeature(DefaultFeatureConfig::make, OAK_LOG, OAK_LEAVES);
+	protected static final JungleGroundBushFeature OAK_SHRUB = new JungleGroundBushFeature(DefaultFeatureConfig::deserialize, OAK_LOG, OAK_LEAVES);
 
 	public BiomeWoodlands() {
 		super(Biome.Category.FOREST, DEPTH, SCALE, TEMPERATURE, DOWNFALL);
@@ -52,7 +53,7 @@ public class BiomeWoodlands extends TraverseBiome {
 	@Override
 	public void addEntitySpawns() {
 		super.addEntitySpawns();
-		addEntitySpawnEntry(EntityType.CREATURE, EntityFactory.WOLF, 2, 4, 4);
+		addEntitySpawnEntry(EntityCategory.CREATURE, EntityType.WOLF, 2, 4, 4);
 	}
 
 	@Override

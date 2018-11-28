@@ -1,9 +1,9 @@
-package prospector.wander.feature;
+package prospector.traverse.wander.feature;
 
 import com.mojang.datafixers.Dynamic;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.BlockVine;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.VineBlock;
 import net.minecraft.class_2902;
 import net.minecraft.class_3747;
 import net.minecraft.state.property.Properties;
@@ -44,7 +44,7 @@ public class TraverseSwampTreeFeature extends TreeFeature<DefaultFeatureConfig> 
 	@Override
 	public boolean method_12775(Set<BlockPos> var1, class_3747 var2, Random var3, BlockPos var4) {
 		int var5 = var3.nextInt(4) + minTreeHeight;
-		var4 = var2.getTopPosition(class_2902.Type.OCEAN_FLOOR, var4);
+		var4 = var2.getTopPosition(class_2902.Heightmap.OCEAN_FLOOR, var4);
 		boolean var6 = true;
 		if (var4.getY() >= 1 && var4.getY() + var5 + 1 <= 256) {
 			int var7;
@@ -131,19 +131,19 @@ public class TraverseSwampTreeFeature extends TreeFeature<DefaultFeatureConfig> 
 								BlockPos var15 = var20.north();
 								BlockPos var16 = var20.south();
 								if (var3.nextInt(4) == 0 && method_16424(var2, var21)) {
-									this.addVines(var2, var21, BlockVine.field_11702);
+									this.addVines(var2, var21, VineBlock.field_11702);
 								}
 
 								if (var3.nextInt(4) == 0 && method_16424(var2, var14)) {
-									this.addVines(var2, var14, BlockVine.field_11696);
+									this.addVines(var2, var14, VineBlock.field_11696);
 								}
 
 								if (var3.nextInt(4) == 0 && method_16424(var2, var15)) {
-									this.addVines(var2, var15, BlockVine.field_11699);
+									this.addVines(var2, var15, VineBlock.field_11699);
 								}
 
 								if (var3.nextInt(4) == 0 && method_16424(var2, var16)) {
-									this.addVines(var2, var16, BlockVine.field_11706);
+									this.addVines(var2, var16, VineBlock.field_11706);
 								}
 							}
 						}
