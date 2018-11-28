@@ -13,7 +13,7 @@
     "surface_builder": "minecraft:default",
     "config": {
       "top_material": {
-        "Name": "minecraft:grass"
+        "Name": "minecraft:grass_block"
       },
       "under_material": {
         "Name": "minecraft:dirt"
