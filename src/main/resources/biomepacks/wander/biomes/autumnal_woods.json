@@ -9,6 +9,20 @@
   "foliage_color": "#D2D31F",
   "water_color": "#3F76E4",
   "water_fog_color": "#050533",
+  "surface": {
+    "surface_builder": "minecraft:default",
+    "config": {
+      "top_material": {
+        "Name": "minecraft:grass"
+      },
+      "under_material": {
+        "Name": "minecraft:dirt"
+      },
+      "underwater_material": {
+        "Name": "minecraft:gravel"
+      }
+    }
+  },
   "features": {
     "raw_generation": [
     ],
@@ -917,13 +931,14 @@
       }
     ]
   },
-  "entity_spawns": [
-    {
-      "category": "creature",
-      "type": "minecraft:wolf",
-      "weight": 5,
-      "min_group_size": 4,
-      "max_group_size": 4
-    }
-  ]
+  "entity_spawns": {
+    "creature": [
+      {
+        "type": "minecraft:wolf",
+        "weight": 5,
+        "min_group_size": 4,
+        "max_group_size": 4
+      }
+    ]
+  }
 }
