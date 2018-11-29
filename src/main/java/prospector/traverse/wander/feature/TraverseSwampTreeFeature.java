@@ -4,11 +4,11 @@ import com.mojang.datafixers.Dynamic;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.VineBlock;
-import net.minecraft.class_2902;
 import net.minecraft.class_3747;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.gen.Heightmap;
 import net.minecraft.world.gen.config.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.TreeFeature;
 
@@ -44,7 +44,7 @@ public class TraverseSwampTreeFeature extends TreeFeature<DefaultFeatureConfig> 
 	@Override
 	public boolean method_12775(Set<BlockPos> var1, class_3747 var2, Random var3, BlockPos var4) {
 		int var5 = var3.nextInt(4) + minTreeHeight;
-		var4 = var2.getTopPosition(class_2902.Heightmap.OCEAN_FLOOR, var4);
+		var4 = var2.getTopPosition(Heightmap.Type.OCEAN_FLOOR, var4);
 		boolean var6 = true;
 		if (var4.getY() >= 1 && var4.getY() + var5 + 1 <= 256) {
 			int var7;
