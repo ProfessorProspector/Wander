@@ -2,29 +2,25 @@ package prospector.traverse.wander;
 
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.block.BlockItem;
 import net.minecraft.sortme.ItemGroup;
-import net.minecraft.state.property.Properties;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.gen.config.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.JungleGroundBushFeature;
 import net.minecraft.world.gen.feature.OakTreeFeature;
+import prospector.traverse.api.BiomePack;
 import prospector.traverse.api.Traverse;
 import prospector.traverse.api.feature.TraverseTreeFeature;
 import prospector.traverse.wander.block.AutumnalLSCompound;
 import prospector.traverse.wander.feature.MeadowFlowerFeature;
 
-public class Wander implements ModInitializer {
-	public static final String MOD_ID = "wander";
+import java.util.Map;
 
-	public static final BlockState JUNGLE_LOG = Blocks.JUNGLE_LOG.getDefaultState();
-	public static final BlockState JUNGLE_LEAVES = Blocks.JUNGLE_LEAVES.getDefaultState().with(Properties.PERSISTENT, false);
-	public static final BlockState OAK_LOG = Blocks.OAK_LOG.getDefaultState();
-	public static final BlockState OAK_LEAVES = Blocks.OAK_LEAVES.getDefaultState().with(Properties.PERSISTENT, false);
+public class Wander implements ModInitializer, BiomePack {
+	public static final String MOD_ID = "wander";
 
 	public static final Block RED_AUTUMNAL_LEAVES;
 	public static final Block RED_AUTUMNAL_SAPLING;
@@ -34,14 +30,6 @@ public class Wander implements ModInitializer {
 	public static final Block ORANGE_AUTUMNAL_SAPLING;
 	public static final Block YELLOW_AUTUMNAL_LEAVES;
 	public static final Block YELLOW_AUTUMNAL_SAPLING;
-
-	public static final Feature<DefaultFeatureConfig> RED_AUTUMNAL_TREE;
-	public static final Feature<DefaultFeatureConfig> BROWN_AUTUMNAL_TREE;
-	public static final Feature<DefaultFeatureConfig> ORANGE_AUTUMNAL_TREE;
-	public static final Feature<DefaultFeatureConfig> YELLOW_AUTUMNAL_TREE;
-	public static final Feature<DefaultFeatureConfig> MEADOW_FLOWER;
-	public static final Feature<DefaultFeatureConfig> MINI_JUNGLE_TREE;
-	public static final Feature<DefaultFeatureConfig> OAK_SHRUB;
 
 	static {
 		AutumnalLSCompound redAutumnalLS = new AutumnalLSCompound();
@@ -59,14 +47,6 @@ public class Wander implements ModInitializer {
 		AutumnalLSCompound yellowAutumnalLS = new AutumnalLSCompound();
 		register("yellow_autumnal_leaves", YELLOW_AUTUMNAL_LEAVES = yellowAutumnalLS.lsLeaves, ItemGroup.DECORATIONS);
 		register("yellow_autumnal_sapling", YELLOW_AUTUMNAL_SAPLING = yellowAutumnalLS.lsSapling, ItemGroup.DECORATIONS);
-
-		RED_AUTUMNAL_TREE = Traverse.registerFeature(MOD_ID, "red_autumnal_tree", new TraverseTreeFeature(DefaultFeatureConfig::deserialize, false, Blocks.OAK_LOG.getDefaultState(), Wander.RED_AUTUMNAL_LEAVES.getDefaultState().with(Properties.PERSISTENT, false)));
-		BROWN_AUTUMNAL_TREE = Traverse.registerFeature(MOD_ID, "brown_autumnal_tree", new TraverseTreeFeature(DefaultFeatureConfig::deserialize, false, Blocks.OAK_LOG.getDefaultState(), Wander.BROWN_AUTUMNAL_LEAVES.getDefaultState().with(Properties.PERSISTENT, false)));
-		ORANGE_AUTUMNAL_TREE = Traverse.registerFeature(MOD_ID, "orange_autumnal_tree", new TraverseTreeFeature(DefaultFeatureConfig::deserialize, false, Blocks.OAK_LOG.getDefaultState(), Wander.ORANGE_AUTUMNAL_LEAVES.getDefaultState().with(Properties.PERSISTENT, false)));
-		YELLOW_AUTUMNAL_TREE = Traverse.registerFeature(MOD_ID, "yellow_autumnal_tree", new TraverseTreeFeature(DefaultFeatureConfig::deserialize, false, Blocks.OAK_LOG.getDefaultState(), Wander.YELLOW_AUTUMNAL_LEAVES.getDefaultState().with(Properties.PERSISTENT, false)));
-		MEADOW_FLOWER = Traverse.registerFeature(MOD_ID, "meadow_flower", new MeadowFlowerFeature(DefaultFeatureConfig::deserialize));
-		MINI_JUNGLE_TREE = Traverse.registerFeature(MOD_ID, "mini_jungle_tree", new OakTreeFeature(DefaultFeatureConfig::deserialize, false, 4, JUNGLE_LOG, JUNGLE_LEAVES, true));
-		OAK_SHRUB = Traverse.registerFeature(MOD_ID, "oak_shrub", new JungleGroundBushFeature(DefaultFeatureConfig::deserialize, JUNGLE_LOG, JUNGLE_LEAVES));
 	}
 
 	private static Block register(String name, Block block, ItemGroup tab) {
@@ -83,7 +63,18 @@ public class Wander implements ModInitializer {
 	}
 
 	@Override
+	public void addFeatures(Map<String, Feature<?>> features) {
+		features.put("red_autumnal_tree", new TraverseTreeFeature(DefaultFeatureConfig::deserialize, false, Blocks.OAK_LOG.getDefaultState(), Wander.RED_AUTUMNAL_LEAVES.getDefaultState()));
+		features.put("brown_autumnal_tree", new TraverseTreeFeature(DefaultFeatureConfig::deserialize, false, Blocks.OAK_LOG.getDefaultState(), Wander.BROWN_AUTUMNAL_LEAVES.getDefaultState()));
+		features.put("orange_autumnal_tree", new TraverseTreeFeature(DefaultFeatureConfig::deserialize, false, Blocks.OAK_LOG.getDefaultState(), Wander.ORANGE_AUTUMNAL_LEAVES.getDefaultState()));
+		features.put("yellow_autumnal_tree", new TraverseTreeFeature(DefaultFeatureConfig::deserialize, false, Blocks.OAK_LOG.getDefaultState(), Wander.ORANGE_AUTUMNAL_LEAVES.getDefaultState()));
+		features.put("meadow_flower", new MeadowFlowerFeature(DefaultFeatureConfig::deserialize));
+		features.put("mini_jungle_tree", new OakTreeFeature(DefaultFeatureConfig::deserialize, false, 4, Blocks.JUNGLE_LOG.getDefaultState(), Blocks.JUNGLE_LEAVES.getDefaultState(), true));
+		features.put("oak_shrub", new JungleGroundBushFeature(DefaultFeatureConfig::deserialize, Blocks.OAK_LOG.getDefaultState(), Blocks.OAK_LEAVES.getDefaultState()));
+	}
+
+	@Override
 	public void onInitialize() {
-		Traverse.registerBiomePack("wander");
+		Traverse.registerBiomePack("wander", this);
 	}
 }
