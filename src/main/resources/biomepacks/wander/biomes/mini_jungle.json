@@ -1,25 +1,11 @@
 {
-  "category": "forest",
-  "depth": 0.2,
-  "scale": 0.05,
-  "temperature": 0.8,
-  "downfall": 0.4,
-  "grass_color": "#D6C23D",
-  "foliage_color": "#D2D31F",
-  "surface": {
-    "surface_builder": "minecraft:default",
-    "config": {
-      "top_material": {
-        "Name": "minecraft:grass_block"
-      },
-      "under_material": {
-        "Name": "minecraft:dirt"
-      },
-      "underwater_material": {
-        "Name": "minecraft:gravel"
-      }
-    }
-  },
+  "category": "jungle",
+  "depth": -0.1,
+  "scale": 0.45,
+  "temperature": 0.95,
+  "downfall": 0.9,
+  "water_color": "#003320",
+  "water_fog_color": "#052721",
   "features": {
     "local_modifications": [
       {
@@ -272,6 +258,99 @@
       }
     ],
     "underground_ores": [
+      {
+        "name": "minecraft:decorated",
+        "config": {
+          "feature": {
+            "name": "minecraft:disk",
+            "config": {
+              "state": {
+                "Name": "minecraft:sand"
+              },
+              "radius": 7,
+              "y_size": 2,
+              "targets": [
+                {
+                  "Name": "minecraft:dirt"
+                },
+                {
+                  "Name": "minecraft:grass_block",
+                  "Properties": {
+                    "snowy": "false"
+                  }
+                }
+              ]
+            }
+          },
+          "decorator": {
+            "name": "minecraft:count_top_solid",
+            "config": {
+              "count": 3
+            }
+          }
+        }
+      },
+      {
+        "name": "minecraft:decorated",
+        "config": {
+          "feature": {
+            "name": "minecraft:disk",
+            "config": {
+              "state": {
+                "Name": "minecraft:clay"
+              },
+              "radius": 4,
+              "y_size": 1,
+              "targets": [
+                {
+                  "Name": "minecraft:dirt"
+                },
+                {
+                  "Name": "minecraft:clay"
+                }
+              ]
+            }
+          },
+          "decorator": {
+            "name": "minecraft:count_top_solid",
+            "config": {
+              "count": 1
+            }
+          }
+        }
+      },
+      {
+        "name": "minecraft:decorated",
+        "config": {
+          "feature": {
+            "name": "minecraft:disk",
+            "config": {
+              "state": {
+                "Name": "minecraft:gravel"
+              },
+              "radius": 6,
+              "y_size": 2,
+              "targets": [
+                {
+                  "Name": "minecraft:dirt"
+                },
+                {
+                  "Name": "minecraft:grass_block",
+                  "Properties": {
+                    "snowy": "false"
+                  }
+                }
+              ]
+            }
+          },
+          "decorator": {
+            "name": "minecraft:count_top_solid",
+            "config": {
+              "count": 1
+            }
+          }
+        }
+      },
       {
         "name": "minecraft:decorated",
         "config": {
@@ -537,202 +616,9 @@
             }
           }
         }
-      },
-      {
-        "name": "minecraft:decorated",
-        "config": {
-          "feature": {
-            "name": "minecraft:disk",
-            "config": {
-              "state": {
-                "Name": "minecraft:sand"
-              },
-              "radius": 7,
-              "y_size": 2,
-              "targets": [
-                {
-                  "Name": "minecraft:dirt"
-                },
-                {
-                  "Name": "minecraft:grass_block",
-                  "Properties": {
-                    "snowy": "false"
-                  }
-                }
-              ]
-            }
-          },
-          "decorator": {
-            "name": "minecraft:count_top_solid",
-            "config": {
-              "count": 3
-            }
-          }
-        }
-      },
-      {
-        "name": "minecraft:decorated",
-        "config": {
-          "feature": {
-            "name": "minecraft:disk",
-            "config": {
-              "state": {
-                "Name": "minecraft:clay"
-              },
-              "radius": 4,
-              "y_size": 1,
-              "targets": [
-                {
-                  "Name": "minecraft:dirt"
-                },
-                {
-                  "Name": "minecraft:clay"
-                }
-              ]
-            }
-          },
-          "decorator": {
-            "name": "minecraft:count_top_solid",
-            "config": {
-              "count": 1
-            }
-          }
-        }
-      },
-      {
-        "name": "minecraft:decorated",
-        "config": {
-          "feature": {
-            "name": "minecraft:disk",
-            "config": {
-              "state": {
-                "Name": "minecraft:gravel"
-              },
-              "radius": 6,
-              "y_size": 2,
-              "targets": [
-                {
-                  "Name": "minecraft:dirt"
-                },
-                {
-                  "Name": "minecraft:grass_block",
-                  "Properties": {
-                    "snowy": "false"
-                  }
-                }
-              ]
-            }
-          },
-          "decorator": {
-            "name": "minecraft:count_top_solid",
-            "config": {
-              "count": 1
-            }
-          }
-        }
       }
     ],
     "vegetal_decoration": [
-      {
-        "name": "minecraft:decorated",
-        "config": {
-          "feature": {
-            "name": "minecraft:random_random_selector",
-            "config": {
-              "features": [
-                {
-                  "name": "minecraft:double_plant",
-                  "config": {
-                    "state": {
-                      "Name": "minecraft:lilac",
-                      "Properties": {
-                        "half": "lower"
-                      }
-                    }
-                  }
-                },
-                {
-                  "name": "minecraft:double_plant",
-                  "config": {
-                    "state": {
-                      "Name": "minecraft:rose_bush",
-                      "Properties": {
-                        "half": "lower"
-                      }
-                    }
-                  }
-                },
-                {
-                  "name": "minecraft:double_plant",
-                  "config": {
-                    "state": {
-                      "Name": "minecraft:peony",
-                      "Properties": {
-                        "half": "lower"
-                      }
-                    }
-                  }
-                },
-                {
-                  "name": "minecraft:general_forest_flower",
-                  "config": {}
-                }
-              ],
-              "count": 0
-            }
-          },
-          "decorator": {
-            "name": "minecraft:count_heightmap_32",
-            "config": {
-              "count": 5
-            }
-          }
-        }
-      },
-      {
-        "name": "minecraft:decorated",
-        "config": {
-          "feature": {
-            "name": "minecraft:random_selector",
-            "config": {
-              "features": [
-                {
-                  "name": "wander:red_autumnal_tree",
-                  "config": {},
-                  "chance": 0.25
-                },
-                {
-                  "name": "wander:brown_autumnal_tree",
-                  "config": {},
-                  "chance": 0.25
-                },
-                {
-                  "name": "wander:yellow_autumnal_tree",
-                  "config": {},
-                  "chance": 0.25
-                },
-                {
-                  "name": "wander:orange_autumnal_tree",
-                  "config": {},
-                  "chance": 0.25
-                }
-              ],
-              "default": {
-                "name": "minecraft:normal_tree",
-                "config": {}
-              }
-            }
-          },
-          "decorator": {
-            "name": "minecraft:count_extra_heightmap",
-            "config": {
-              "count": 10,
-              "extra_chance": 0.1,
-              "extra_count": 1
-            }
-          }
-        }
-      },
       {
         "name": "minecraft:decorated_flower",
         "config": {
@@ -743,7 +629,7 @@
           "decorator": {
             "name": "minecraft:count_heightmap_32",
             "config": {
-              "count": 2
+              "count": 6
             }
           }
         }
@@ -752,17 +638,13 @@
         "name": "minecraft:decorated",
         "config": {
           "feature": {
-            "name": "minecraft:grass",
-            "config": {
-              "state": {
-                "Name": "minecraft:grass"
-              }
-            }
+            "name": "minecraft:jungle_grass",
+            "config": {}
           },
           "decorator": {
             "name": "minecraft:count_heightmap_double",
             "config": {
-              "count": 2
+              "count": 16
             }
           }
         }
@@ -884,6 +766,65 @@
             }
           }
         }
+      },
+      {
+        "name": "minecraft:decorated",
+        "config": {
+          "feature": {
+            "name": "minecraft:melon",
+            "config": {}
+          },
+          "decorator": {
+            "name": "minecraft:count_heightmap_double",
+            "config": {
+              "count": 1
+            }
+          }
+        }
+      },
+      {
+        "name": "minecraft:decorated",
+        "config": {
+          "feature": {
+            "name": "minecraft:vines",
+            "config": {}
+          },
+          "decorator": {
+            "name": "minecraft:count_height_64",
+            "config": {
+              "count": 50
+            }
+          }
+        }
+      },
+      {
+        "name": "minecraft:decorated",
+        "config": {
+          "feature": {
+            "name": "minecraft:random_selector",
+            "config": {
+              "features": [
+                {
+                  "name": "minecraft:fancy_tree",
+                  "config": {},
+                  "chance": 0.1
+                }
+              ],
+              "default": {
+                "name": "wander:mini_jungle_tree",
+                "config": {}
+              }
+            }
+          },
+          "decorator": {
+            "name": "minecraft:count_extra_heightmap",
+            "config": {
+              "count": 50,
+              "extra_chance": 0.1,
+              "extra_count": 1
+            }
+          }
+        }
       }
     ],
     "top_layer_modification": [
@@ -905,16 +846,10 @@
   "entity_spawns": {
     "creature": [
       {
-        "type": "minecraft:sheep",
-        "weight": 12,
-        "min_group_size": 4,
-        "max_group_size": 4
-      },
-      {
-        "type": "minecraft:pig",
-        "weight": 10,
-        "min_group_size": 4,
-        "max_group_size": 4
+        "type": "minecraft:parrot",
+        "weight": 40,
+        "min_group_size": 1,
+        "max_group_size": 2
       },
       {
         "type": "minecraft:chicken",
@@ -923,16 +858,16 @@
         "max_group_size": 4
       },
       {
-        "type": "minecraft:cow",
-        "weight": 8,
-        "min_group_size": 4,
-        "max_group_size": 4
+        "type": "minecraft:ocelot",
+        "weight": 2,
+        "min_group_size": 1,
+        "max_group_size": 1
       },
       {
-        "type": "minecraft:wolf",
-        "weight": 5,
-        "min_group_size": 4,
-        "max_group_size": 4
+        "type": "minecraft:tropical_fish",
+        "weight": 30,
+        "min_group_size": 5,
+        "max_group_size": 8
       }
     ],
     "ambient": [

@@ -1,5 +1,7 @@
 {
   "biomes": [
-    "autumnal_woods"
+    "autumnal_woods",
+    "meadow",
+    "mini_jungle"
   ]
 }
