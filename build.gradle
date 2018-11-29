@@ -1,3 +1,5 @@
+import net.fabricmc.loom.LoomGradlePlugin
+
 buildscript {
 	repositories {
 		jcenter()
@@ -17,11 +19,14 @@ plugins {
 	id 'idea'
 }
 
-apply plugin: net.fabricmc.loom.LoomGradlePlugin
+apply plugin: LoomGradlePlugin
+apply plugin: 'maven'
+apply plugin: 'maven-publish'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
+group = "prospector.traverse.wander"
 archivesBaseName = "Wander"
 version = "0.1.0"
 
@@ -33,4 +38,40 @@ dependencies {
 	mappings "net.fabricmc:pomf:18w47b.9"
 	modCompile "net.fabricmc:fabric-loader:18w44a-0.1.0.45"
 	modCompile "net.fabricmc:fabric:0.0.3-SNAPSHOT"
+	modCompile "prospector.silk:SilkAPI:+"
+	modCompile "prospector.traverse.api:TraverseAPI:+"
+}
+
+uploadArchives {
+	repositories {
+		mavenDeployer {
+			//This is used when the build is done on a slave node
+			if (project.hasProperty('mavenPass')) {
+				println 'Uploading to remote Maven Repo'
+				repository(url: "http://mavenupload.modmuss50.me/") {
+					authentication(userName: "buildslave", password: project.getProperty('mavenPass'))
+				}
+			} else {
+				//this is when the build is executed on the master node
+				println 'Uploading to local Maven Repo'
+				repository(url: "file:///var/www/maven/")
+			}
+			pom {
+				groupId = project.group
+				version = project.version
+				artifactId = project.archivesBaseName
+				project {
+					name project.archivesBaseName
+					packaging 'jar'
+					description project.archivesBaseName
+					url 'https://github.com/ProfessorProspector/Wander'
+					scm {
+						url 'https://github.com/ProfessorProspector/Wander'
+						connection 'scm:git:git@github.com:ProfessorProspector/Wander.git'
+						developerConnection 'scm:git:git@github.com:ProfessorProspector/Wander.git'
+					}
+				}
+			}
+		}
+	}
 }
