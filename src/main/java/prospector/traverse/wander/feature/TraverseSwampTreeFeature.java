@@ -6,8 +6,8 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.VineBlock;
 import net.minecraft.class_2902;
 import net.minecraft.class_3747;
+import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.Properties;
-import net.minecraft.state.property.PropertyBoolean;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.gen.config.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.TreeFeature;
@@ -159,7 +159,7 @@ public class TraverseSwampTreeFeature extends TreeFeature<DefaultFeatureConfig> 
 		}
 	}
 
-	private void addVines(class_3747 var1, BlockPos var2, PropertyBoolean var3) {
+	private void addVines(class_3747 var1, BlockPos var2, BooleanProperty var3) {
 		BlockState var4 = Blocks.VINE.getDefaultState().with(var3, true);
 		this.method_13153(var1, var2, var4);
 		int var5 = 4;
