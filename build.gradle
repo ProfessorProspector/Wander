@@ -26,7 +26,7 @@ apply plugin: 'maven-publish'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
-group = "prospector.traverse.wander"
+group = "io.github.prospector.traverse.wander"
 archivesBaseName = "Wander"
 version = "0.1.0"
 
@@ -43,8 +43,8 @@ dependencies {
 	mappings "net.fabricmc:yarn:18w49a.1"
 	modCompile "net.fabricmc:fabric-loader:0.2.0.60"
 	modCompile "net.fabricmc:fabric:0.1.0.36"
-	modCompile "prospector.silk:SilkAPI:+"
-	modCompile "prospector.traverse.api:TraverseAPI:+"
+	modCompile "io.github.prospector.silk:SilkAPI:+"
+	modCompile "io.github.prospector.traverse.api:TraverseAPI:+"
 }
 
 uploadArchives {

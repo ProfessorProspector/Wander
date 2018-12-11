@@ -1,4 +1,4 @@
-package prospector.traverse.wander.feature;
+package io.github.prospector.traverse.wander.feature;
 
 import com.mojang.datafixers.Dynamic;
 import net.minecraft.block.BlockState;
