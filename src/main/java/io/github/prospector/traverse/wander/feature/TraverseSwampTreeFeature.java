@@ -10,13 +10,13 @@ import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.gen.Heightmap;
 import net.minecraft.world.gen.config.feature.DefaultFeatureConfig;
-import net.minecraft.world.gen.feature.TreeFeature;
+import net.minecraft.world.gen.feature.AbstractTreeFeature;
 
 import java.util.Random;
 import java.util.Set;
 import java.util.function.Function;
 
-public class TraverseSwampTreeFeature extends TreeFeature<DefaultFeatureConfig> {
+public class TraverseSwampTreeFeature extends AbstractTreeFeature<DefaultFeatureConfig> {
 
 	public static final BlockState OAK_LOG = Blocks.OAK_LOG.getDefaultState();
 	public static final BlockState OAK_LEAVES = Blocks.OAK_LEAVES.getDefaultState().with(Properties.PERSISTENT, false);

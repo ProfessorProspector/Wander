@@ -6,7 +6,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.gen.chunk.ChunkGenerator;
-import net.minecraft.world.gen.chunk.ChunkGeneratorSettingsImpl;
+import net.minecraft.world.gen.chunk.ChunkGeneratorSettings;
 import net.minecraft.world.gen.config.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.FlowerFeature;
 
@@ -45,7 +45,7 @@ public class MeadowFlowerFeature extends FlowerFeature {
 	}
 
 	@Override
-	public boolean generate(IWorld iWorld, ChunkGenerator<? extends ChunkGeneratorSettingsImpl> class_2794, Random random, BlockPos blockPos, DefaultFeatureConfig defaultFeatureConfig) {
+	public boolean generate(IWorld iWorld, ChunkGenerator<? extends ChunkGeneratorSettings> class_2794, Random random, BlockPos blockPos, DefaultFeatureConfig defaultFeatureConfig) {
 		return method_13176(iWorld, class_2794, random, blockPos, defaultFeatureConfig);
 	}
 }

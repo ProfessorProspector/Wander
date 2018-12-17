@@ -50,7 +50,7 @@ public class Wander implements ModInitializer, BiomePack {
 	}
 
 	private static Block register(String name, Block block, ItemGroup tab) {
-		Registry.register(Registry.BLOCKS, MOD_ID + ":" + name, block);
+		Registry.register(Registry.BLOCK, MOD_ID + ":" + name, block);
 		BlockItem item = new BlockItem(block, new Item.Settings().itemGroup(tab));
 		item.registerBlockItemMap(Item.BLOCK_ITEM_MAP, item);
 		register(name, item);
@@ -58,7 +58,7 @@ public class Wander implements ModInitializer, BiomePack {
 	}
 
 	private static Item register(String name, Item item) {
-		Registry.register(Registry.ITEMS, "wander:" + name, item);
+		Registry.register(Registry.ITEM, "wander:" + name, item);
 		return item;
 	}
 
