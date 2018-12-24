@@ -103,7 +103,7 @@ public class TraverseSwampTreeFeature extends AbstractTreeFeature<DefaultFeature
 							if (Math.abs(var11) != var18 || Math.abs(var13) != var18 || var3.nextInt(2) != 0 && var17 != 0) {
 								var14 = new BlockPos(var10, var7, var12);
 								if (method_16420(var2, var14) || method_16425(var2, var14)) {
-									this.method_13153(var2, var14, OAK_LEAVES);
+									this.addBlockState(var2, var14, OAK_LEAVES);
 								}
 							}
 						}
@@ -161,11 +161,11 @@ public class TraverseSwampTreeFeature extends AbstractTreeFeature<DefaultFeature
 
 	private void addVines(class_3747 var1, BlockPos var2, BooleanProperty var3) {
 		BlockState var4 = Blocks.VINE.getDefaultState().with(var3, true);
-		this.method_13153(var1, var2, var4);
+		this.addBlockState(var1, var2, var4);
 		int var5 = 4;
 
 		for (var2 = var2.down(); method_16424(var1, var2) && var5 > 0; --var5) {
-			this.method_13153(var1, var2, var4);
+			this.addBlockState(var1, var2, var4);
 			var2 = var2.down();
 		}
 
