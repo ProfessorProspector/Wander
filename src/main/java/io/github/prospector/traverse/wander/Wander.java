@@ -1,5 +1,8 @@
 package io.github.prospector.traverse.wander;
 
+import io.github.prospector.traverse.api.BiomePack;
+import io.github.prospector.traverse.api.Traverse;
+import io.github.prospector.traverse.api.feature.TraverseTreeFeature;
 import io.github.prospector.traverse.wander.block.AutumnalLSCompound;
 import io.github.prospector.traverse.wander.feature.MeadowFlowerFeature;
 import net.fabricmc.api.ModInitializer;
@@ -9,13 +12,10 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.block.BlockItem;
 import net.minecraft.util.registry.Registry;
-import net.minecraft.world.gen.config.feature.DefaultFeatureConfig;
+import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.JungleGroundBushFeature;
 import net.minecraft.world.gen.feature.OakTreeFeature;
-import io.github.prospector.traverse.api.BiomePack;
-import io.github.prospector.traverse.api.Traverse;
-import io.github.prospector.traverse.api.feature.TraverseTreeFeature;
 
 import java.util.Map;
 

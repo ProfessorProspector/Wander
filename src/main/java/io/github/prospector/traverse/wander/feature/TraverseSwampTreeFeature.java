@@ -9,8 +9,8 @@ import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.gen.Heightmap;
-import net.minecraft.world.gen.config.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.AbstractTreeFeature;
+import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 
 import java.util.Random;
 import java.util.Set;
@@ -103,7 +103,7 @@ public class TraverseSwampTreeFeature extends AbstractTreeFeature<DefaultFeature
 							if (Math.abs(var11) != var18 || Math.abs(var13) != var18 || var3.nextInt(2) != 0 && var17 != 0) {
 								var14 = new BlockPos(var10, var7, var12);
 								if (method_16420(var2, var14) || method_16425(var2, var14)) {
-									this.addBlockState(var2, var14, OAK_LEAVES);
+									this.setBlockState(var2, var14, OAK_LEAVES);
 								}
 							}
 						}
@@ -161,11 +161,11 @@ public class TraverseSwampTreeFeature extends AbstractTreeFeature<DefaultFeature
 
 	private void addVines(class_3747 var1, BlockPos var2, BooleanProperty var3) {
 		BlockState var4 = Blocks.VINE.getDefaultState().with(var3, true);
-		this.addBlockState(var1, var2, var4);
+		this.setBlockState(var1, var2, var4);
 		int var5 = 4;
 
 		for (var2 = var2.down(); method_16424(var1, var2) && var5 > 0; --var5) {
-			this.addBlockState(var1, var2, var4);
+			this.setBlockState(var1, var2, var4);
 			var2 = var2.down();
 		}
 

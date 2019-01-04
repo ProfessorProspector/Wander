@@ -1,12 +1,12 @@
 package io.github.prospector.traverse.wander.block;
 
-import net.minecraft.block.Blocks;
-import net.minecraft.block.BlockState;
-import net.minecraft.world.gen.config.feature.DefaultFeatureConfig;
 import io.github.prospector.silk.block.SilkLeavesBlock;
 import io.github.prospector.silk.block.SilkSaplingBlock;
 import io.github.prospector.silk.util.SilkSaplingGenerator;
 import io.github.prospector.traverse.api.feature.TraverseTreeFeature;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 
 public class AutumnalLSCompound {
 	public static final BlockState OAK_LOG = Blocks.OAK_LOG.getDefaultState();
