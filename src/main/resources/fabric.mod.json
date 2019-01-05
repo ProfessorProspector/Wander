@@ -1,7 +1,7 @@
 {
   "id": "wander",
   "name": "Wander",
-  "version": "0.1.0",
+  "version": "$version",
   "side": "universal",
   "initializer": "io.github.prospector.traverse.wander.Wander",
   "description": "Some like to *traverse* landscapes but others prefer to simply wander.",
