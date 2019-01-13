@@ -4,6 +4,11 @@
   "version": "$version",
   "side": "universal",
   "initializer": "io.github.prospector.traverse.wander.Wander",
+  "requires": {
+	"fabric": "*",
+	"silk": "*",
+	"traverse": "*"
+  },
   "description": "Some like to *traverse* landscapes but others prefer to simply wander.",
   "mixins": { }
 }

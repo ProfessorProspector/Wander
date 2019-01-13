@@ -6,7 +6,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.gen.chunk.ChunkGenerator;
-import net.minecraft.world.gen.chunk.ChunkGeneratorSettings;
+import net.minecraft.world.gen.chunk.ChunkGeneratorConfig;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.FlowerFeature;
 
@@ -20,8 +20,8 @@ public class MeadowFlowerFeature extends FlowerFeature {
 	}
 
 	@Override
-	public BlockState method_13175(Random rand, BlockPos pos) {
-		int r = rand.nextInt(12);
+	public BlockState method_13175(Random random, BlockPos pos) {
+		int r = random.nextInt(12);
 		if (r == 0 || r == 1 || r == 2) {
 			return Blocks.POPPY.getDefaultState();
 		} else if (r == 3 || r == 4 || r == 5) {
@@ -31,7 +31,7 @@ public class MeadowFlowerFeature extends FlowerFeature {
 		} else if (r == 9 || r == 10) {
 			return Blocks.DANDELION.getDefaultState();
 		} else {
-			int t = rand.nextInt(5);
+			int t = random.nextInt(5);
 			if (t == 0) {
 				return Blocks.ORANGE_TULIP.getDefaultState();
 			} else if (t == 1) {
@@ -45,7 +45,7 @@ public class MeadowFlowerFeature extends FlowerFeature {
 	}
 
 	@Override
-	public boolean generate(IWorld iWorld, ChunkGenerator<? extends ChunkGeneratorSettings> class_2794, Random random, BlockPos blockPos, DefaultFeatureConfig defaultFeatureConfig) {
-		return method_13176(iWorld, class_2794, random, blockPos, defaultFeatureConfig);
+	public boolean generate(IWorld world, ChunkGenerator<? extends ChunkGeneratorConfig> generator, Random random, BlockPos blockPos, DefaultFeatureConfig defaultFeatureConfig) {
+		return method_13176(world, generator, random, blockPos, defaultFeatureConfig);
 	}
 }
