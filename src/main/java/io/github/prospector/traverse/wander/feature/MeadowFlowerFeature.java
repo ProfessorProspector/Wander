@@ -20,7 +20,7 @@ public class MeadowFlowerFeature extends FlowerFeature {
 	}
 
 	@Override
-	public BlockState method_13175(Random random, BlockPos pos) {
+	public BlockState getFlowerToPlace(Random random, BlockPos pos) {
 		int r = random.nextInt(12);
 		if (r == 0 || r == 1 || r == 2) {
 			return Blocks.POPPY.getDefaultState();

@@ -39,12 +39,14 @@ minecraft {
 }
 
 dependencies {
-	minecraft "com.mojang:minecraft:19w02a"
-	mappings "net.fabricmc:yarn:19w02a.20"
-	modCompile "net.fabricmc:fabric-loader:0.3.2.93"
-	modCompile "net.fabricmc:fabric:0.1.4.71"
-	modCompile "io.github.prospector.silk:SilkAPI:+"
+	minecraft "com.mojang:minecraft:1.14 Pre-Release 5"
+	mappings "net.fabricmc:yarn:1.14 Pre-Release 5+build.2"
+	modCompile "net.fabricmc:fabric-loader:0.4.1+build.126"
+	modCompile "net.fabricmc:fabric:0.2.7+build.123"
 	modCompile "io.github.prospector.traverse.api:TraverseAPI:+"
+	include "io.github.prospector.traverse.api:TraverseAPI:+"
+	modCompile "io.github.prospector.silk:SilkAPI:+"
+	include "io.github.prospector.silk:SilkAPI:+"
 }
 
 processResources {

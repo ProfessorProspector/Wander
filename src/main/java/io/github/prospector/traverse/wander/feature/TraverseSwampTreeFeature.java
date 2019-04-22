@@ -7,8 +7,8 @@ import net.minecraft.block.VineBlock;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.Heightmap;
 import net.minecraft.world.ModifiableTestableWorld;
-import net.minecraft.world.gen.Heightmap;
 import net.minecraft.world.gen.feature.AbstractTreeFeature;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 
@@ -131,19 +131,19 @@ public class TraverseSwampTreeFeature extends AbstractTreeFeature<DefaultFeature
 								BlockPos var15 = var20.north();
 								BlockPos var16 = var20.south();
 								if (random.nextInt(4) == 0 && isAir(world, var21)) {
-									this.addVines(world, var21, VineBlock.field_11702);
+									this.addVines(world, var21, VineBlock.EAST);
 								}
 
 								if (random.nextInt(4) == 0 && isAir(world, var14)) {
-									this.addVines(world, var14, VineBlock.field_11696);
+									this.addVines(world, var14, VineBlock.WEST);
 								}
 
 								if (random.nextInt(4) == 0 && isAir(world, var15)) {
-									this.addVines(world, var15, VineBlock.field_11699);
+									this.addVines(world, var15, VineBlock.SOUTH);
 								}
 
 								if (random.nextInt(4) == 0 && isAir(world, var16)) {
-									this.addVines(world, var16, VineBlock.field_11706);
+									this.addVines(world, var16, VineBlock.NORTH);
 								}
 							}
 						}

@@ -1,14 +1,29 @@
 {
+  "schemaVersion": 1,
   "id": "wander",
   "name": "Wander",
   "version": "$version",
-  "side": "universal",
-  "initializer": "io.github.prospector.traverse.wander.Wander",
+  "environment": "*",
+  "license": "MIT",
+  "icon": "assets/wander/icon.png",
+  "entrypoints": {
+	"main": [
+	  "io.github.prospector.traverse.wander.Wander"
+	]
+  },
+  "contact": {
+	"homepage": "https://minecraft.curseforge.com/projects/wander",
+	"issues": "https://github.com/Prospector/Wander/issues"
+  },
   "requires": {
 	"fabric": "*",
 	"silk": "*",
 	"traverse": "*"
   },
-  "description": "Some like to *traverse* landscapes but others prefer to simply wander.",
-  "mixins": { }
+  "authors": [
+	"Prospector"
+  ],
+  "contributors": [
+  ],
+  "description": "Some like to *traverse* landscapes but others prefer to simply wander."
 }
