@@ -1,0 +1,26 @@
+{
+  "category": "forest",
+  "depth": 1,
+  "scale": 0.3,
+  "temperature": 0.8,
+  "downfall": 1,
+  "grass_color": "#0000FF",
+  "foliage_color": "#00FF33",
+  "surface": {
+	"surface_builder": "minecraft:default",
+	"config": {
+	  "top_material": {
+		"Name": "minecraft:grass_block"
+	  },
+	  "under_material": {
+		"Name": "minecraft:sand"
+	  },
+	  "underwater_material": {
+		"Name": "minecraft:end_stone"
+	  }
+	}
+  },
+  "features": {
+
+  }
+}

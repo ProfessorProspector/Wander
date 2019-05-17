@@ -7,6 +7,7 @@ import net.minecraft.block.VineBlock;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MutableIntBoundingBox;
 import net.minecraft.world.Heightmap;
 import net.minecraft.world.ModifiableTestableWorld;
 import net.minecraft.world.gen.feature.AbstractTreeFeature;
@@ -42,7 +43,7 @@ public class TraverseSwampTreeFeature extends AbstractTreeFeature<DefaultFeature
 	}
 
 	@Override
-	public boolean generate(Set<BlockPos> blocks, ModifiableTestableWorld world, Random random, BlockPos pos) {
+	public boolean generate(Set<BlockPos> blocks, ModifiableTestableWorld world, Random random, BlockPos pos, MutableIntBoundingBox boundingBox) {
 		int var5 = random.nextInt(4) + minTreeHeight;
 		pos = world.getTopPosition(Heightmap.Type.OCEAN_FLOOR, pos);
 		boolean var6 = true;
@@ -113,7 +114,7 @@ public class TraverseSwampTreeFeature extends AbstractTreeFeature<DefaultFeature
 				for (var7 = 0; var7 < var5; ++var7) {
 					BlockPos var19 = pos.up(var7);
 					if (isAirOrLeaves(world, var19) || isWater(world, var19)) {
-						this.setBlockState(blocks, world, var19, OAK_LOG);
+						this.setBlockState(blocks, world, var19, OAK_LOG, boundingBox);
 					}
 				}
 

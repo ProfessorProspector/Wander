@@ -7,7 +7,7 @@
   "license": "MIT",
   "icon": "assets/wander/icon.png",
   "entrypoints": {
-	"main": [
+	"biomepack": [
 	  "io.github.prospector.traverse.wander.Wander"
 	]
   },
