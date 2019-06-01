@@ -25,5 +25,8 @@
   ],
   "contributors": [
   ],
-  "description": "Some like to *traverse* landscapes but others prefer to simply wander."
+  "description": "Some like to *traverse* landscapes but others prefer to simply wander.",
+  "custom": {
+	"modmenu:parent": "fabric-resource-loader-v0"
+  }
 }
