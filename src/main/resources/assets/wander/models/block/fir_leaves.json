@@ -1,0 +1,6 @@
+{
+  "parent": "block/leaves",
+  "textures": {
+    "all": "wander:block/fir_leaves"
+  }
+}

@@ -1,4 +1,20 @@
 {
+  "generation": {
+    "variant": [
+      {
+        "parent": "minecraft:jungle",
+        "chance": 0.2
+      },
+      {
+        "parent": "minecraft:jungle_edge",
+        "chance": 0.2
+      },
+      {
+        "parent": "minecraft:swamp",
+        "chance": 0.25
+      }
+    ]
+  },
   "category": "jungle",
   "depth": -0.1,
   "scale": 0.45,

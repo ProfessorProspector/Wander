@@ -7,26 +7,23 @@
   "license": "MIT",
   "icon": "assets/wander/icon.png",
   "entrypoints": {
-	"biomepack": [
-	  "io.github.prospector.traverse.wander.Wander"
-	]
+    "biomepack": [
+      "io.github.prospector.traverse.wander.Wander"
+    ]
   },
   "contact": {
-	"homepage": "https://minecraft.curseforge.com/projects/wander",
-	"issues": "https://github.com/Prospector/Wander/issues"
+    "homepage": "https://minecraft.curseforge.com/projects/wander",
+    "issues": "https://github.com/Prospector/Wander/issues"
   },
-  "requires": {
-	"fabric": "*",
-	"silk": "*",
-	"traverse": "*"
+  "depends": {
+    "fabric": "*",
+    "silk": "*",
+    "traverse": "*"
   },
   "authors": [
-	"Prospector"
+    "Prospector"
   ],
   "contributors": [
   ],
-  "description": "Some like to *traverse* landscapes but others prefer to simply wander.",
-  "custom": {
-	"modmenu:parent": "fabric-resource-loader-v0"
-  }
+  "description": "Some like to *traverse* landscapes but others prefer to simply wander."
 }

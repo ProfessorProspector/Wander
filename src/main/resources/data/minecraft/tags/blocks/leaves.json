@@ -1,9 +1,10 @@
 {
   "replace": false,
   "values": [
-	"wander:brown_autumnal_leaves",
-	"wander:red_autumnal_leaves",
-	"wander:yellow_autumnal_leaves",
-	"wander:orange_autumnal_leaves"
+    "wander:brown_autumnal_leaves",
+    "wander:red_autumnal_leaves",
+    "wander:yellow_autumnal_leaves",
+    "wander:orange_autumnal_leaves",
+    "wander:fir_leaves"
   ]
 }

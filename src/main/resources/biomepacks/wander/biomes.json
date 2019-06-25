@@ -1,8 +1,11 @@
 {
   "biomes": [
-	"autumnal_woods",
-	"meadow",
-	"mini_jungle",
-	"woodlands"
+    "arid_highland",
+    "autumnal_woods",
+    "meadow",
+    "mini_jungle",
+    "woodlands",
+    "coniferous_forest",
+    "raised_coniferous_forest"
   ]
 }

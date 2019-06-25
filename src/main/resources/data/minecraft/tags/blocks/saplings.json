@@ -1,9 +1,10 @@
 {
   "replace": false,
   "values": [
-	"wander:brown_autumnal_sapling",
-	"wander:red_autumnal_sapling",
-	"wander:yellow_autumnal_sapling",
-	"wander:orange_autumnal_sapling"
+    "wander:brown_autumnal_sapling",
+    "wander:red_autumnal_sapling",
+    "wander:yellow_autumnal_sapling",
+    "wander:orange_autumnal_sapling",
+    "wander:fir_sapling"
   ]
 }

@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "wander:block/fir_log_top",
+    "side": "wander:block/fir_log"
+  }
+}

@@ -3,6 +3,8 @@
   "biome.wander.woodlands": "Woodlands",
   "biome.wander.mini_jungle": "Mini Jungle",
   "biome.wander.meadow": "Meadow",
+  "biome.wander.coniferous_forest": "Coniferous Forest",
+  "biome.wander.raised_coniferous_forest": "Raised Coniferous Forest",
 
   "block.wander.red_autumnal_leaves": "Red Autumnal Leaves",
   "block.wander.brown_autumnal_leaves": "Brown Autumnal Leaves",
@@ -11,5 +13,9 @@
   "block.wander.red_autumnal_sapling": "Red Autumnal Sapling",
   "block.wander.brown_autumnal_sapling": "Brown Autumnal Sapling",
   "block.wander.orange_autumnal_sapling": "Orange Autumnal Sapling",
-  "block.wander.yellow_autumnal_sapling": "Yellow Autumnal Sapling"
+  "block.wander.yellow_autumnal_sapling": "Yellow Autumnal Sapling",
+
+  "block.wander.fir_log": "Fir Log",
+  "block.wander.fir_leaves": "Fir Leaves",
+  "block.wander.fir_sapling": "Fir Sapling"
 }

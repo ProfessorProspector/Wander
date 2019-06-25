@@ -1,4 +1,22 @@
 {
+  "generation": {
+    "climate": [
+      {
+        "climate": "temperate",
+        "weight": 1
+      },
+      {
+        "climate": "cool",
+        "weight": 1
+      }
+    ],
+    "variant": [
+      {
+        "parent": "minecraft:plains",
+        "chance": 0.2
+      }
+    ]
+  },
   "category": "plains",
   "depth": 0.1,
   "scale": 0.0,
@@ -7,20 +25,20 @@
   "grass_color": "#65CC53",
   "foliage_color": "#5DD64A",
   "default_features": {
-	"land_carvers": true,
-	"default_structures": true,
-	"default_lakes": true,
-	"dungeons": true,
-	"forest_flowers": true,
-	"mineables": true,
-	"default_ores": true,
-	"default_disks": true,
-	"default_flowers": true,
-	"forest_grass": true,
-	"default_mushrooms": true,
-	"default_vegetation": true,
-	"springs": true,
-	"frozen_top_layer": true
+    "land_carvers": true,
+    "default_structures": true,
+    "default_lakes": true,
+    "dungeons": true,
+    "forest_flowers": true,
+    "mineables": true,
+    "default_ores": true,
+    "default_disks": true,
+    "default_flowers": true,
+    "forest_grass": true,
+    "default_mushrooms": true,
+    "default_vegetation": true,
+    "springs": true,
+    "frozen_top_layer": true
   },
   "features": {
     "vegetal_decoration": [

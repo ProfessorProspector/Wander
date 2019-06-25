@@ -1,20 +1,15 @@
 {
   "generation": {
-    "climate": [
+    "hills": [
       {
-        "climate": "temperate",
-        "weight": 0.8
-      },
-      {
-        "climate": "cool",
-        "weight": 0.3
+        "parent": "wander:coniferous_forest"
       }
     ]
   },
   "category": "forest",
-  "depth": 0.4,
-  "scale": 0.4,
-  "temperature": 0.6,
+  "depth": 0.8,
+  "scale": 0.1,
+  "temperature": 0.5,
   "downfall": 0.9,
   "grass_color": "#338235",
   "foliage_color": "#338235",

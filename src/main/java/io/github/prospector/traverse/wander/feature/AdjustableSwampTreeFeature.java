@@ -17,7 +17,7 @@ import java.util.Random;
 import java.util.Set;
 import java.util.function.Function;
 
-public class TraverseSwampTreeFeature extends AbstractTreeFeature<DefaultFeatureConfig> {
+public class AdjustableSwampTreeFeature extends AbstractTreeFeature<DefaultFeatureConfig> {
 
 	public static final BlockState OAK_LOG = Blocks.OAK_LOG.getDefaultState();
 	public static final BlockState OAK_LEAVES = Blocks.OAK_LEAVES.getDefaultState().with(Properties.PERSISTENT, false);
@@ -26,15 +26,15 @@ public class TraverseSwampTreeFeature extends AbstractTreeFeature<DefaultFeature
 	private BlockState stateWood;
 	private BlockState stateLeaves;
 
-	public TraverseSwampTreeFeature(Function<Dynamic<?>, ? extends DefaultFeatureConfig> function, boolean isWorldGen) {
+	public AdjustableSwampTreeFeature(Function<Dynamic<?>, ? extends DefaultFeatureConfig> function, boolean isWorldGen) {
 		this(function, isWorldGen, 5);
 	}
 
-	public TraverseSwampTreeFeature(Function<Dynamic<?>, ? extends DefaultFeatureConfig> function, boolean isWorldGen, int minTreeHeight) {
+	public AdjustableSwampTreeFeature(Function<Dynamic<?>, ? extends DefaultFeatureConfig> function, boolean isWorldGen, int minTreeHeight) {
 		this(function, isWorldGen, minTreeHeight, OAK_LOG, OAK_LEAVES);
 	}
 
-	public TraverseSwampTreeFeature(Function<Dynamic<?>, ? extends DefaultFeatureConfig> function, boolean isWorldGen, int minTreeHeight, BlockState stateWood, BlockState stateLeaves) {
+	public AdjustableSwampTreeFeature(Function<Dynamic<?>, ? extends DefaultFeatureConfig> function, boolean isWorldGen, int minTreeHeight, BlockState stateWood, BlockState stateLeaves) {
 		super(function, !isWorldGen);
 		this.isWorldGen = isWorldGen;
 		this.minTreeHeight = minTreeHeight;
